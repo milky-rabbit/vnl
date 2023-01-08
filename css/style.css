@@ -1,0 +1,365 @@
+body {
+    background: no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #fff;
+    font-size: 100%;
+    overflow-wrap: break-word;
+}
+
+div {
+    display: block;
+}
+
+h3 {
+    padding: 0;
+}
+
+.app {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    transition: opacity .3s var(--a-curve);
+}
+
+.full {
+    height: 100%;
+}
+
+.apps, .full {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.center-above, .center-below {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.center-col {
+    min-width: 0;
+    flex-shrink: 1;
+    margin-bottom: 50px;
+}
+
+.app-dash {
+    display: flex;
+    flex-direction: column
+}
+
+.bottom-right>:last-child .app-dash, .top-right>:first-child .app-dash {
+    padding-right: var(--dash-side-margin);
+}
+
+.top-row {
+    height: 60px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start;
+}
+
+.app-container{
+    --app-container-transition: opacity 0.5s;
+    display: inline-block;
+    transition: var(--app-container-transition);
+}
+
+.app-container, .app-dash-icon, .app-wrapper, .toggle, .top-row {
+    position: relative;
+}
+
+.top-left {
+    --max-height: 60px;
+    --side-padding: 8px;
+    height: 150px;
+    flex-grow: 0;
+    flex-shrink: 100000000;
+    align-items: stretch;
+}
+
+.top-center {
+    --icon-size: 32px;
+    flex-grow: 0;
+    justify-content: center;
+}
+
+.top-right {
+    min-height: 150px;
+    min-width: 0;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    text-align: right;
+    margin: 10px;
+}
+
+.top-center, .top-left, .top-right{
+    position: relative;
+    flex: 1 1 auto;
+    display: inline-flex;
+}
+
+.top-right .metric-item {
+    padding: 11px var(--dash-metric-side-padding) 10px;
+}
+
+.metric-item {
+    display: inline-block;
+    border-radius: 2px;
+    text-align: right;
+    vertical-align: top;
+}
+
+.metric-label {
+    white-space: nowrap;
+    padding: 0px;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    font-size: .8125rem;
+    line-height: 1.2;
+}
+
+.metric-item, .metric-stat, .search-wrapper .input-wrapper {
+    position: relative;
+}
+
+.app-dash .metric-stat {
+    margin-right:  -1px;
+    margin-bottom: 1px;
+    white-space: nowrap;
+}
+
+.metric-stat {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    font-size: 1.625rem;
+    font-weight: 400;
+}
+
+.current-icon {
+    margin-right: 0px;
+}
+
+
+.resize-wrapper.tr-width {
+    display: flex;
+    justify-content: center;
+    transition: width var(--duration);
+}
+
+.clock .time {
+    cursor : default;
+    font-size : 750%;
+    letter-spacing: -5px;
+}
+
+.center .clock {
+    margin : -3px 0;
+    position: relative;
+}
+
+.prompt {
+    --input-padding: 4px 2px 1px;
+    max-width: 87.5vw;
+    padding-bottom: 0.5em; 
+}
+
+.focus-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.slot-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.focus-prompt-wrapper {
+    width: 100%;
+}
+
+.focus-question {
+    margin: 0;
+    font-size: 1.8875em;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.focus-input {
+    width: 100%;
+    padding: var(--input-padding);
+    display: block;
+    background: 0;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-size: 1.225rem;
+    font-weight: 500;
+    line-height: 1.2;
+    outline: none;
+    text-align: center;
+    transition: border-color .2s;
+}
+
+.has-3-col {
+    padding: 0 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.has-3-col .left{
+    justify-content: flex-end;
+}
+
+.has-3-col .side-col{
+    flex: 1 0 50px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.focus-message-wrapper {
+    position: relative;
+    min-height: 40px;
+    font-size: 1.225rem;
+    line-height: 1.8;
+    color: dimgrey;
+}
+
+.focus-message {
+    padding-bottom: 1px;
+}
+
+ul {
+    padding: 6px 0;
+    position: relative;
+    list-style: none;
+}
+
+li {
+    border-radius: 15%;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    background-color: #fff;
+    opacity: 0.7;
+    margin-top : 10px;
+}
+
+.dropdown-list-icon {
+    opacity: .6;
+}
+
+.weather-icon {
+    /* width: 25px;
+    height: 25px; */
+    vertical-align: middle;
+}
+.icon {
+    --icon-size: 0.4em;
+    height: var(icon-size);
+    width: var(--icon-size);
+    fill: var(--color-icon);
+    margin :0  15px 2px 15px;
+}
+
+.app-dash .icon, .dash-icon, .weather-icon {
+    fill: #fff;
+}
+
+.login-input {
+    width: 100%;
+    padding: var(--input-padding);
+    display: block;
+    background: 0;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-size: 1.85em;
+    font-weight: 500;
+    line-height: 1.2;
+    outline: none;
+    text-align: center;
+    transition: border-color .2s;
+}
+
+.resize-wrapper.tr-height {
+    transition: height var(--duration) ease;
+}
+
+.center .time, .clock .format, .greeting{
+    font-weight: 500;
+}
+
+.greeting .content {
+    display: inline;
+    margin-bottom: 50px;
+    font-size: 2rem !important;
+}
+
+#login, .greeting .content, .intro {
+    font-size: var(--font-size-greeting);
+}
+
+.bottom-row {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom, .bottom-left, .bottom-right{
+    flex: 0 0 var(--bottom-side-width);
+    display: flex;
+    align-items: flex-end;
+}
+
+.bottom {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.bottom-right {
+    justify-content: flex-end;
+}
+
+.quote {
+    height: 58px;
+    width: auto;
+    padding-bottom: 2px;
+    flex: 1 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    text-align: center;;
+}
+
+.body {
+    padding: 0 5px;
+    position: relative;
+    display: block;
+    font-size: 1.125rem;
+    user-select: text;
+    margin: 0;
+    color: #fff;
+    line-height: 1.2;
+    transition: all 0.35s var(--a-curve);
+}
+
+.display-none {
+    display: none;
+}
+
+@media screen and (max-height: 550px)
+.center, .center-below {
+    font-size : 80%;
+}
